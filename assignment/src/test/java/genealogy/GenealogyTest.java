@@ -23,8 +23,14 @@ public class GenealogyTest {
      */
     @Test
     public void testSelf() {
-        //TODO 1 test Self
-        fail( "method testSelf reached end. You know what to do." );
+        try {
+            Genealogy gen = new Genealogy();
+            assertThat(gen.getAncestry("samples.Student"))
+                    .contains("Object", "Student");
+        }
+        catch (Exception e){
+        }
+        //fail( "method testSelf reached end. You know what to do." );
     }
 
     /**
@@ -32,8 +38,12 @@ public class GenealogyTest {
      */
     @Test
     public void genealogyJButton() {
-        //TODO 2 test with JButton
-        fail( "method genealogyJButton reached end. You know what to do." );
+        Genealogy gen = new Genealogy();
+        assertThat(gen.getAncestry("javax.swing.JButton"))
+                .contains("Object", "Component", "ImageObserver", "MenuContainer",
+                        "Serializable",  "Container", "JComponent", "TransferHandler$HasGetTransferHandler",
+                        "AbstractButton", "ItemSelectable", "SwingConstants", "JButton", "Accessible");
+        //fail( "method genealogyJButton reached end. You know what to do." );
     }
     
     /**
